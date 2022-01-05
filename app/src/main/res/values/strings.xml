@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">eho</string>
+    <string name="title_activity_maps">MapsActivity</string>
+</resources>
