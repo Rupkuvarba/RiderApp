@@ -2,27 +2,16 @@ package com.app.eho
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.MutableLiveData
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 import com.app.eho.databinding.ActivityMapsBinding
-import androidx.lifecycle.Transformations.map
-import com.google.android.gms.maps.GoogleMap.OnMapLoadedCallback
-import androidx.lifecycle.Transformations.map
-import com.google.android.gms.maps.GoogleMap.OnCameraChangeListener
-import com.google.android.gms.maps.model.*
-import android.graphics.Bitmap
-
-import android.R
-
-import android.graphics.drawable.BitmapDrawable
-
-
-
-
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
+import com.google.android.gms.maps.model.LatLngBounds
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -53,7 +42,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
-        //var markersOption: MutableIterable<MarkerOptions> = MutableLiveData<MarkerOptions>()
+        // Add a marker in Sydney and move the camera
+        val sydney = LatLng(-34.0, 151.0)
+        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
 
         // Add a marker in Sydney and move the camera
         var latLng1 = LatLng(-34.0, 151.0)
@@ -61,20 +53,24 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         var latLng3 = LatLng(28.433147, 77.0952446)
         var latLng4 = LatLng(28.440547000000002, 77.1026446)
 
-        var m1 : MarkerOptions = MarkerOptions().position(latLng1).title("Marker in Sydney").snippet("Population: 4,627,300").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_car))
-        var m2 : MarkerOptions = MarkerOptions().position(latLng2).title("Marker in Group1").snippet("Population: 4,627").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_car))
-        var m3 : MarkerOptions = MarkerOptions().position(latLng3).title("Marker in Group2").snippet("Population: 4,6").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_car))
-        var m4 : MarkerOptions = MarkerOptions().position(latLng4).title("Marker in Group3").snippet("Population: 4,627,3").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_car))
+        var m1 : MarkerOptions = MarkerOptions().position(latLng1).title("Marker in Sydney").snippet("Population: 4,627,300").icon(
+            BitmapDescriptorFactory.fromResource(R.drawable.ic_car))
+        var m2 : MarkerOptions = MarkerOptions().position(latLng2).title("Marker in Group1").snippet("Population: 4,627").icon(
+            BitmapDescriptorFactory.fromResource(R.drawable.ic_car))
+        var m3 : MarkerOptions = MarkerOptions().position(latLng3).title("Marker in Group2").snippet("Population: 4,6").icon(
+            BitmapDescriptorFactory.fromResource(R.drawable.ic_car))
+        var m4 : MarkerOptions = MarkerOptions().position(latLng4).title("Marker in Group3").snippet("Population: 4,627,3").icon(
+            BitmapDescriptorFactory.fromResource(R.drawable.ic_car))
 
-       // mMap.addMarker(m1)
+        // mMap.addMarker(m1)
         mMap.addMarker(m2)
         mMap.addMarker(m3)
         mMap.addMarker(m4)
 
-       /* // Add a marker in Sydney and move the camera
-        sydney = LatLng(28.440547000000002, 77.1026446)
-        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in sydney 2"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))*/
+        /* // Add a marker in Sydney and move the camera
+         sydney = LatLng(28.440547000000002, 77.1026446)
+         mMap.addMarker(MarkerOptions().position(sydney).title("Marker in sydney 2"))
+         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))*/
 
         val builder = LatLngBounds.builder()
         //builder.include(latLng1)
@@ -86,7 +82,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val bounds = builder.build()
 
         //set a 30 pixels padding from the edge of the screen
-        mMap.setOnMapLoadedCallback(OnMapLoadedCallback {
+        mMap.setOnMapLoadedCallback(GoogleMap.OnMapLoadedCallback {
             //move and animate the camera
             mMap.moveCamera(
                 CameraUpdateFactory.newLatLngBounds(
@@ -96,10 +92,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             )
 
             //animate camera by providing zoom and duration args, callBack set to null
-           // mMap.animateCamera(CameraUpdateFactory.zoomTo(2f), 2000, null)
+            // mMap.animateCamera(CameraUpdateFactory.zoomTo(2f), 2000, null)
         })
-
     }
-
-
 }
