@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_connection_view"
+    android:layout_width="match_parent"
+    android:layout_height="35dp"
+    android:background="@color/net_warning_bg">
+
+    <TextView
+        android:id="@+id/tv_connection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:maxWidth="200sp"
+        android:text="@string/no_internet_connection"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_small_xx"
+        android:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

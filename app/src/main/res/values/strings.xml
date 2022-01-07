@@ -10,4 +10,90 @@
     <string name="current_location">Current Location</string>
     <string name="where_to">Where to?</string>
     <string name="pickup_location">Pickup Location</string>
+
+    <!--fcm notification channel-->
+    <string name="default_notification_channel_id" translatable="false">fcm_notifications_id</string>
+
+    <!--network-->
+    <string name="network_connection_error">Internet connection lost, please retry again</string>
+    <string name="network_default_error">Something wrong happened, please retry again</string>
+    <string name="network_internal_error">Our systems got an error, please retry again</string>
+    <string name="network_server_not_available">Our services are under maintenance, please retry after some time
+    </string>
+    <string name="server_connection_error">Not able to connect, please retry again</string>
+    <string name="network_login_again">Please log in again</string>
+
+    <!-- //Mark: Internet alert message // -->
+    <string name="check_internet_connection">No connection to the Internet</string>
+    <string name="no_internet_connection">No internet connection</string>
+    <string name="unable_to_resolve_host_check_internet_connection">No contact to the server. Please check your internet connection.</string>
+
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
+    <string name="ok">OK</string>
+
+    <!--form-->
+    <string name="email_field_hint">Email</string>
+    <string name="email_con_field_hint">Confirm Email</string>
+    <string name="password_field_hint">Password</string>
+    <string name="password_confirm_field_hint">Confirm password</string>
+    <string name="name_field_hint">Name</string>
+    <string name="phone_field_hint">Phone</string>
+
+    <!--form validation-->
+    <string name="email_field_empty">Email can\'t be empty</string>
+    <string name="password_field_empty">Password can\'t be empty</string>
+    <string name="email_field_invalid">Not a valid email</string>
+    <string name="email_field_compare_invalid">Not a valid email</string>
+    <string name="password_field_small_length">Password less than 6 digits</string>
+    <string name="msg_mismatch_email">Email does not match, please verify.</string>
+    <string name="msg_mismatch_password">Your passwords do not match.</string>
+    <string name="name_field_empty">Name can\'t be empty</string>
+    <string name="phone_field_empty">Phone can\'t be empty</string>
+
+    <!--Alert-->
+    <string name="alert_btn_ok">Ok</string>
+    <string name="alert_btn_term_accept">Accept</string>
+    <string name="alert_btn_term_decline">Decline</string>
+    <string name="alert_btn_yes">Yes</string>
+    <string name="alert_btn_no">No</string>
+    <string name="alert_btn_cancel">Cancel</string>
+    <string name="alert_btn_i_am_sure">I\'m sure</string>
+    <string name="alert_btn_continue">Continue</string>
+
+    <!--login-->
+    <string name="login_button_text">Login</string>
+    <string name="login_text_forget_password">Forgot password</string>
+    <string name="login_text_new_registration">Do not have an account ?</string>
+    <string name="login_button_with_navigate_drawer">Drawer Menu</string>
+    <string name="login_button_with_gmail">Login with Gmail</string>
+
+    <!--Registration-->
+    <string name="registration_title">Register now!</string>
+    <string name="registration_button_text">Submit</string>
+
+    <!--Forgot pwd-->
+    <string name="forgot_password_title">Forgot Password</string>
+    <string name="forgot_password_button_text">Submit</string>
+    <string name="forgot_password_enter_your_email_address">Enter your email address to request a password reset</string>
+
+    <!--Dashboard screen-->
+    <string name="dashboard_title">Dashboard</string>
+    <string name="welcome_back_log_in_to_continue_with_ui_for_android">Welcom back. Log in to continue with UI for android.</string>
+
+    <!--Drawer menu-->
+    <string name="menu_home">EHO</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="communicate">Communicate</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
 </resources>

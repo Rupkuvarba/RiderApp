@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <color name="window_background">@color/white</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -9,4 +11,33 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="light_grey">#80DCDCDC</color>
+
+    <color name="red">#B61212</color>
+    <color name="net_warning_bg">#ED4915</color>
+
+    <color name="app_theme_light_color">#F21119BE</color>
+    <color name="app_theme_color">#F21A2BC1</color>
+    <color name="app_theme_dark_color">#F21633D3</color>
+
+    <color name="colorPrimary">@color/app_theme_color</color>
+    <color name="colorPrimaryDark">@color/app_theme_color</color>
+    <color name="colorAccent">#26ADFA</color>
+    <color name="color_theme">#3DCFCF</color>
+    <color name="layout_background">@color/white</color>
+    <color name="colorPrimaryVariant">#000000</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorSecondary">#FF03DAC5</color>
+    <color name="colorSecondaryVariant">#FF018786</color>
+    <color name="colorOnSecondary">#000000</color>
+
+    <!--toolbar color-->
+    <color name="toolbar_color">@color/app_theme_color</color>
+    <color name="toolbar_icon_color">#ffffff</color>
+
+    <!--Edit text color-->
+    <color name="text_input_stroke_color">@color/colorPrimaryDark</color>
+    <color name="text_input_icon_color">#706D6D</color>
+
+    <!--button-->
+    <color name="btn_bg_color">@color/colorPrimaryDark</color>
 </resources>

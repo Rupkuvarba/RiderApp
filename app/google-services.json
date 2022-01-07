@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "923578232126",
+    "project_id": "appeho",
+    "storage_bucket": "appeho.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:923578232126:android:f90b08f7b2208f4d99506f",
+        "android_client_info": {
+          "package_name": "com.app.eho"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "923578232126-ef4itq5a594no1p68erjalip883q17r8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.eho",
+            "certificate_hash": "1e48e9832248c254110e1229219d7f4906f040a9"
+          }
+        },
+        {
+          "client_id": "923578232126-hib1l67op4g5pbams6bk692f5n3san1s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8l8R6s0avOOoxvzrdkviHns8pPNrlxWQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "923578232126-hib1l67op4g5pbams6bk692f5n3san1s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

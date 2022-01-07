@@ -1,11 +1,13 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
 }
 
 android {
     compileSdk 31
-    buildToolsVersion "31.0.0"
+    //buildToolsVersion "31.0.0"
 
     defaultConfig {
         applicationId "com.app.eho"
@@ -15,8 +17,31 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
 
+    flavorDimensions 'version'
+    productFlavors {
+        development {
+            applicationId "com.app.eho"
+
+            //Api - version
+            resValue "string", "url_version", "1"
+
+            //development
+            resValue "string", "api_url", "https://dev.ident.service"
+
+        }
+        live {
+            applicationId "com.app.eho"
+
+            //Api - version
+            resValue "string", "url_version", "1"
+
+            //production
+            resValue "string", "api_url", "https://ident.service"
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -27,11 +52,17 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    packagingOptions {
+        exclude 'META-INF/atomicfu.kotlin_module'
+    }
     kotlinOptions {
         jvmTarget = '1.8'
     }
     buildFeatures {
         viewBinding true
+    }
+    dataBinding {
+        enabled = true
     }
 }
 
@@ -50,5 +81,57 @@ dependencies {
     //Permission
     implementation 'com.karumi:dexter:6.2.3'
     implementation 'com.google.android.gms:play-services-location:19.0.0'
+
+    //multidexApplication
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    // logger
+    implementation "com.jakewharton.timber:timber:$timber_version"
+
+    // Parser
+    implementation "com.google.code.gson:gson:$gson_version"
+
+    // Networking
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+    implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0"
+
+    // Reactive
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxjava_version"
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroid_version"
+
+    // Database
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-rxjava2:$room_version"
+
+    //size - SSP - a scalable size unit for texts
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+
+    //firebase
+    //implementation 'com.google.firebase:firebase-messaging:20.1.0'
+    // Import the Firebase BoM - By using the Firebase Android BoM, your app will always use compatible Firebase library versions.
+    //implementation platform('com.google.firebase:firebase-bom:29.0.3')
+    //// Add the dependency for the Firebase SDK for Google Analytics
+    //  // When using the BoM, don't specify versions in Firebase dependencies
+    //implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-messaging:23.0.0'
+
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+
+    //Navigate drawer
+    // Material Navigation View Library
+    implementation 'com.shreyaspatil:MaterialNavigationView:1.1'
+
+    //Gmail-sign in
+    //Dependency for Google
+    implementation 'com.google.android.gms:play-services-auth:20.0.0'
+
+    //Kotlin coroutine viewModel scope
+    // replace x.x.x with latest version
+    //implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:x.x.x"
 
 }

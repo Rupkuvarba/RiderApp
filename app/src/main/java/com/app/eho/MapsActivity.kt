@@ -3,6 +3,7 @@ package com.app.eho
 import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.content.IntentSender.SendIntentException
 import android.content.pm.PackageManager
@@ -27,6 +28,7 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.app.eho.databinding.ActivityMapsBinding
+import com.app.eho.ui.MainActivity
 import com.app.eho.utils.location.LocationAddress
 import com.app.eho.utils.network.NetUtils
 import com.google.android.gms.common.ConnectionResult
@@ -394,4 +396,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, LocationListener,
             binding.pickUpTextView.text = locationAddress
         }
     }
+}
+
+fun Context.mapIntent(): Intent {
+    return Intent(this, MapsActivity::class.java)
 }

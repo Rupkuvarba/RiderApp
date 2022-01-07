@@ -1,0 +1,31 @@
+<resources>
+
+   <!--http://www.programmingfacts.com/how-to-define-dimens-xml-for-every-different-screen-size-in-android/-->
+
+   <dimen name="text_size_verysmall">9dp</dimen>
+   <dimen name="text_size_verysmall_x">10sp</dimen>
+   <dimen name="text_size_small">11dp</dimen>
+   <dimen name="text_size_small_x">13sp</dimen>
+   <dimen name="text_size_small_xx">15dp</dimen>
+   <dimen name="text_size_normal">15sp</dimen>
+   <dimen name="text_size_normal_x">17dp</dimen>
+   <dimen name="text_size_tour_desc_small">12sp</dimen>
+   <dimen name="text_size_matrix_user">10dp</dimen>
+
+   <dimen name="label_text_size">11dp</dimen>
+   <dimen name="label_detail_text_size">13dp</dimen>
+
+   <dimen name="dialog_margin_left_right">20dp</dimen>
+   <dimen name="dialog_title_height">50dp</dimen>
+   <dimen name="dialog_margin_left_right_double">30dp</dimen>
+
+   <!--general-->
+   <dimen name="screen_top_margin">50dp</dimen>
+   <dimen name="screen_text_input_top_margin">15dp</dimen>
+   <dimen name="screen_form_padding">20dp</dimen>
+   <dimen name="toolbar_top_height">50dp</dimen>
+
+   <!--drawer-->
+   <dimen name="nav_header_vertical_spacing">8dp</dimen>
+
+</resources>
