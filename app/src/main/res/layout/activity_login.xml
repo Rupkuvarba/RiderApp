@@ -126,8 +126,21 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_10ssp"
                         app:layout_constraintEnd_toEndOf="parent"
+                        android:visibility="gone"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/tv_gmail"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_gmail"
+                        style="@style/sign_in_social_iv"
+                        android:layout_marginStart="0dp"
+                        android:padding="9dp"
+                        android:src="@mipmap/btn_google"
+                        android:layout_marginTop="@dimen/_10ssp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_gmail"
+                        android:contentDescription=""/>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

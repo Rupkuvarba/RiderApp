@@ -12,9 +12,11 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.app.eho.R
 import com.app.eho.data.local.pref.SPHelper
 import com.app.eho.databinding.ActivityLoginBinding
 import com.app.eho.ui.base.BaseActivity
+import com.app.eho.ui.custom.AlertDialogUtil
 import com.app.eho.ui.mainIntent
 import com.app.eho.ui.modules.auth.forgotpwd.forgotPasswordIntent
 import com.app.eho.ui.modules.auth.registration.registrationIntent
@@ -22,7 +24,9 @@ import com.app.eho.ui.modules.navigatedrawer.navigateDrawerIntent
 import com.app.eho.utils.common.Event
 import com.app.eho.utils.common.Status
 import com.app.eho.utils.log.LogUtil
+import com.app.eho.utils.network.NetUtils
 import com.fsm.sharedpreference.SPConstants
+import com.google.android.gms.auth.api.Auth
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -97,6 +101,8 @@ class LoginActivity : BaseActivity() {
         activityBinding.signInButton.setSize(SignInButton.SIZE_STANDARD);
 
         activityBinding.signInButton.setOnClickListener {  signIn()}
+
+        activityBinding.ivGmail.setOnClickListener {  signIn()}
     }
 
     override fun setupObservers() {
@@ -141,18 +147,6 @@ class LoginActivity : BaseActivity() {
         })
     }
 
-    fun setUpGmail() {
-        // Configure sign-in to request the user's ID, email address, and basic
-        // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
-        // Configure sign-in to request the user's ID, email address, and basic
-        // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
-        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestEmail()
-            .build()
-        // Build a GoogleSignInClient with the options specified by gso.
-        googleSignInClient = GoogleSignIn.getClient(this, gso);
-    }
-
     override fun onStart() {
         super.onStart()
         // Check for existing Google Sign In account, if the user is already signed in
@@ -191,6 +185,18 @@ class LoginActivity : BaseActivity() {
         finish()
     }
 
+    fun setUpGmail() {
+        // Configure sign-in to request the user's ID, email address, and basic
+        // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
+        // Configure sign-in to request the user's ID, email address, and basic
+        // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestEmail()
+            .build()
+        // Build a GoogleSignInClient with the options specified by gso.
+        googleSignInClient = GoogleSignIn.getClient(this, gso);
+    }
+
     private fun signIn() {
         val signInIntent: Intent = googleSignInClient.getSignInIntent()
         resultLauncher.launch(signInIntent)
@@ -209,17 +215,33 @@ class LoginActivity : BaseActivity() {
         }
     }
 
-   /* override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
+    //Social Login
+    private fun SocialLogin() {
+        //First Logout
+       // signOutGoogle() //Sign out from google,if sign in
+        if (NetUtils.isNetworkAvailable(mContext)) {
+            //Google
+            signIn()
+        } else AlertDialogUtil.showAlert(
+            mContext,
+            getString(R.string.app_name),
+            getString(R.string.check_internet_connection)
+        )
+    }
 
-        // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
-        if (requestCode == GOOGLE_SIGN_IN) {
-            // The Task returned from this call is always completed, no need to attach
-            // a listener.
-            val task: Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(data)
-            handleSignInResult(task)
+    //Sign out - Google
+    private fun signOutGoogle() {
+        try {
+            /*Auth.GoogleSignInApi.signOut(googleSignInClient).setResultCallback { status ->
+                LogUtil.displayLog(
+                    "WelcomeActivity: ",
+                    "signOut : status : $status"
+                )
+            }*/
+        } catch (e: Exception) {
+            e.printStackTrace()
         }
-    }*/
+    }
 
     private fun handleSignInResult(completedTask: Task<GoogleSignInAccount>) {
         try {
