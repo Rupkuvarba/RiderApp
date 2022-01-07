@@ -5,6 +5,9 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.provider.Settings;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Window;
 import android.widget.TextView;
@@ -136,46 +139,6 @@ public class AlertDialogUtil {
             e.printStackTrace();
         }
     }
-/*
-    //Show - Message - Alert
-    public static void showAlertDismissActivityWithRoot(final Context context, String title, String message) {
-        try {
-            if (context != null && !((Activity) context).isFinishing()) {
-
-                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
-                alertDialogBuilder
-                        .setTitle(Fonts.INSTANCE.getTypefaceBold(context,title))
-                        .setMessage(Fonts.INSTANCE.getTypefaceMedium(context, message))
-                        .setIcon(R.mipmap.ic_launcher)
-                        .setPositiveButton(context.getResources().getString(R.string.alert_btn_ok), new DialogInterface.OnClickListener() {
-
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                //Dismiss Dialog
-                                dialog.dismiss();
-
-                                //Start - Login Activity
-                                Intent intent = new Intent(context, MainActivity.class);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                context.startActivity(intent);
-
-                                ((Activity) context).finish();
-
-                            }
-
-                        });
-
-                AlertDialog alertDialog = alertDialogBuilder.show();
-                setFontToButton(context, alertDialog);
-
-                //Set text
-                setAlertTextView(context, message, alertDialog);
-
-            }
-        } catch (Exception e) {
-            Log.d("Alert", " alert exception: " + e);
-        }
-    }
 
     //Display - GPS Alert
     public static void GpsAlertMessage(final Context context) {
@@ -242,6 +205,48 @@ public class AlertDialogUtil {
         }
 
     }
+
+/*
+    //Show - Message - Alert
+    public static void showAlertDismissActivityWithRoot(final Context context, String title, String message) {
+        try {
+            if (context != null && !((Activity) context).isFinishing()) {
+
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+                alertDialogBuilder
+                        .setTitle(Fonts.INSTANCE.getTypefaceBold(context,title))
+                        .setMessage(Fonts.INSTANCE.getTypefaceMedium(context, message))
+                        .setIcon(R.mipmap.ic_launcher)
+                        .setPositiveButton(context.getResources().getString(R.string.alert_btn_ok), new DialogInterface.OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                //Dismiss Dialog
+                                dialog.dismiss();
+
+                                //Start - Login Activity
+                                Intent intent = new Intent(context, MainActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                context.startActivity(intent);
+
+                                ((Activity) context).finish();
+
+                            }
+
+                        });
+
+                AlertDialog alertDialog = alertDialogBuilder.show();
+                setFontToButton(context, alertDialog);
+
+                //Set text
+                setAlertTextView(context, message, alertDialog);
+
+            }
+        } catch (Exception e) {
+            Log.d("Alert", " alert exception: " + e);
+        }
+    }
+
 
     //Logout from app
     public static void logoutDialog(final Context context) {

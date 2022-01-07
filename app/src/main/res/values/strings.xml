@@ -10,6 +10,7 @@
     <string name="current_location">Current Location</string>
     <string name="where_to">Where to?</string>
     <string name="pickup_location">Pickup Location</string>
+    <string name="location_service_disable">Location service disabled</string>
 
     <!--fcm notification channel-->
     <string name="default_notification_channel_id" translatable="false">fcm_notifications_id</string>
@@ -60,6 +61,8 @@
     <string name="alert_btn_cancel">Cancel</string>
     <string name="alert_btn_i_am_sure">I\'m sure</string>
     <string name="alert_btn_continue">Continue</string>
+    <string name="something_went_wrong">Something went wrong.</string>
+    <string name="gps_message">GPS is currently disabled. In order to use this application please enable it</string>
 
     <!--login-->
     <string name="login_button_text">Login</string>
@@ -95,5 +98,7 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
+
+    <string name="map_confirm_pick_up">Confirm Pick Up</string>
 
 </resources>

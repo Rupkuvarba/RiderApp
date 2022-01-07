@@ -23,10 +23,9 @@ import com.app.eho.ui.modules.auth.registration.registrationIntent
 import com.app.eho.ui.modules.navigatedrawer.navigateDrawerIntent
 import com.app.eho.utils.common.Event
 import com.app.eho.utils.common.Status
-import com.app.eho.utils.log.LogUtil
+import com.app.eho.utils.log.LogUtils
 import com.app.eho.utils.network.NetUtils
 import com.fsm.sharedpreference.SPConstants
-import com.google.android.gms.auth.api.Auth
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -162,7 +161,7 @@ class LoginActivity : BaseActivity() {
     fun updateUI(account: GoogleSignInAccount?) {
         //Show login user details
 
-        LogUtil.displayLog("Tag", " User login detail acct: "+account)
+        LogUtils.displayLog("Tag", " User login detail acct: "+account)
         if(account != null){
             val personName = account.getDisplayName()
             val personGivenName = account.getGivenName()
@@ -179,7 +178,7 @@ class LoginActivity : BaseActivity() {
                     "\npersonPhoto: "+personPhoto
 
             Toast.makeText(mContext, " User login details: $userInfo", Toast.LENGTH_LONG).show()
-            LogUtil.displayLog("Tag", " User login detail : $userInfo")
+            LogUtils.displayLog("Tag", " User login detail : $userInfo")
         }
         startActivity(mainIntent())
         finish()
@@ -204,11 +203,11 @@ class LoginActivity : BaseActivity() {
     }
 
     var resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-        LogUtil.displayLog("Login"," Login activity result.resultCode: "+result.resultCode)
+        LogUtils.displayLog("Login"," Login activity result.resultCode: "+result.resultCode)
         if (result.resultCode == Activity.RESULT_OK) {
             // There are no request codes
             val data: Intent? = result.data
-            LogUtil.displayLog("Login"," Login activity "+data)
+            LogUtils.displayLog("Login"," Login activity "+data)
             val task: Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(data)
             handleSignInResult(task)
             //doSomeOperations()
@@ -252,7 +251,7 @@ class LoginActivity : BaseActivity() {
         } catch (e: ApiException) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
-            LogUtil.displayLog("TAG", "signInResult:failed code=" + e.statusCode)
+            LogUtils.displayLog("TAG", "signInResult:failed code=" + e.statusCode)
             updateUI(null)
         }
     }

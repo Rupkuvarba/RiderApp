@@ -3,7 +3,7 @@ package com.app.eho.utils.log
 import android.content.Context
 import android.util.Log
 
-class LogUtil {
+class LogUtils {
     companion object {
         private val isLogEnabled = true
 

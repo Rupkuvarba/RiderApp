@@ -10,12 +10,9 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.app.eho.R
-import com.app.eho.utils.apptheme.ThemeUtil
-import com.app.eho.utils.font.Fonts
-import com.app.eho.utils.log.LogUtil
+import com.app.eho.utils.log.LogUtils
 import com.app.eho.utils.network.NetUtils
 import java.lang.Exception
-import java.util.logging.Logger
 
 abstract class BaseActivity : AppCompatActivity(){
 
@@ -64,12 +61,12 @@ abstract class BaseActivity : AppCompatActivity(){
 
     fun setNetConnection() {
         isInternetConnected = NetUtils.isNetworkAvailable(mContext)
-        LogUtil.displayLog("BaseActivity","NetConnection : setNetConnection "+isInternetConnected)
+        LogUtils.displayLog("BaseActivity","NetConnection : setNetConnection "+isInternetConnected)
     }
 
     fun showConnection() {
         try {
-            LogUtil.displayLog("BaseActivity","NetConnection : showConnection "+isInternetConnected+ " rlConnectionView: "+rlConnectionView)
+            LogUtils.displayLog("BaseActivity","NetConnection : showConnection "+isInternetConnected+ " rlConnectionView: "+rlConnectionView)
             if (isInternetConnected) {
                 rlConnectionView!!.visibility = View.GONE
             } else {

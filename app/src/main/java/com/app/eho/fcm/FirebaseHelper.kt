@@ -3,7 +3,7 @@ package com.app.eho.fcm
 import android.content.Context
 import android.util.Log
 import com.app.eho.data.local.pref.SPHelper
-import com.app.eho.utils.log.LogUtil
+import com.app.eho.utils.log.LogUtils
 import com.fsm.sharedpreference.SPConstants
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.messaging.FirebaseMessaging
@@ -25,9 +25,9 @@ object FirebaseHelper {
             //Log.d("FCMHelper", "fcm token FCM registration token storeToken $storeToken")
             if(!token.isNullOrBlank() && !storeToken.equals(token)){
                 SPHelper.setMyStringPref(context, SPConstants.FCM_TOKEN,token)
-                LogUtil.displayLog("FCMHelper", "fcm token FCM registration token not same")
+                LogUtils.displayLog("FCMHelper", "fcm token FCM registration token not same")
             }else{
-                LogUtil.displayLog("FCMHelper", "fcm token FCM registration token same")
+                LogUtils.displayLog("FCMHelper", "fcm token FCM registration token same")
             }
 
         })

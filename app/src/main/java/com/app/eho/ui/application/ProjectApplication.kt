@@ -3,10 +3,7 @@ package com.app.eho.ui.application
 import android.annotation.SuppressLint
 import android.content.Context
 import androidx.multidex.MultiDexApplication
-import com.app.eho.R
-import com.app.eho.utils.constant.APIServer
 import com.app.eho.utils.helper.Foreground
-import com.app.eho.utils.log.LogUtil
 
 class ProjectApplication : MultiDexApplication() {
 

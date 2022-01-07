@@ -2,7 +2,7 @@ package com.app.eho.utils.network
 
 import android.content.Context
 import android.net.ConnectivityManager
-import com.app.eho.utils.log.LogUtil
+import com.app.eho.utils.log.LogUtils
 import com.google.gson.GsonBuilder
 import com.google.gson.JsonSyntaxException
 import com.jakewharton.retrofit2.adapter.rxjava2.HttpException
@@ -32,11 +32,11 @@ class NetworkHelper constructor(private val context: Context) {
                 .fromJson(throwable.response().errorBody()?.string(), NetworkError::class.java)
             return NetworkError(throwable.code(), error.statusCode, error.message)
         } catch (e: IOException) {
-            LogUtil.displayLogError(TAG, e.toString())
+            LogUtils.displayLogError(TAG, e.toString())
         } catch (e: JsonSyntaxException) {
-            LogUtil.displayLogError(TAG, e.toString())
+            LogUtils.displayLogError(TAG, e.toString())
         } catch (e: NullPointerException) {
-            LogUtil.displayLogError(TAG, e.toString())
+            LogUtils.displayLogError(TAG, e.toString())
         }
         return defaultNetworkError
     }

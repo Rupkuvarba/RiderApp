@@ -60,15 +60,6 @@ class NavigateDrawerActivity : BaseActivity() {
 
         // Show ItemStyle
         println("ItemStyle=${activityBinding.navView.getItemStyle()}")
-        /*setSupportActionBar(activityBinding.toolbar)
-        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24)
-        supportActionBar?.setDisplayShowTitleEnabled(false)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        activityBinding.toolbar.setNavigationOnClickListener(){
-            Toast.makeText(context,"Open drawer menu", Toast.LENGTH_SHORT).show()
-            //finish()
-        }*/
     }
 
     override fun setupObservers() {
