@@ -108,8 +108,8 @@ dependencies {
     implementation "androidx.room:room-rxjava2:$room_version"
 
     //size - SSP - a scalable size unit for texts
-    implementation 'com.intuit.ssp:ssp-android:1.0.6'
-
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation "com.intuit.ssp:ssp-android:1.0.6"
     //firebase
     //implementation 'com.google.firebase:firebase-messaging:20.1.0'
     // Import the Firebase BoM - By using the Firebase Android BoM, your app will always use compatible Firebase library versions.
@@ -130,8 +130,13 @@ dependencies {
     //Dependency for Google
     implementation 'com.google.android.gms:play-services-auth:20.0.0'
 
+//    implementation 'com.github.aabhasr1:OtpView:v1.1.2-ktx'
+    implementation 'com.github.KevinSchildhorn:OTPView:0.2.2'
     //Kotlin coroutine viewModel scope
     // replace x.x.x with latest version
     //implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:x.x.x"
-
+    //facebook
+    implementation 'com.facebook.android:facebook-login:12.2.0'
+    //size - SSP - a scalable size unit for texts
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
 }

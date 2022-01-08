@@ -67,5 +67,4 @@ class ForgotPasswordViewModel(): ViewModel() {
             }
         }
     }
-
 }

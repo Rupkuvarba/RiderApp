@@ -2,22 +2,15 @@ package com.app.eho.ui.modules.auth.registration
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.MenuItem
 import android.view.View
-import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.app.eho.R
-import com.app.eho.databinding.ActivityLoginBinding
 import com.app.eho.databinding.ActivityRegistrationBinding
-import com.app.eho.ui.MainActivity
 import com.app.eho.ui.base.BaseActivity
-import com.app.eho.ui.modules.auth.login.LoginActivity
-import com.app.eho.ui.modules.auth.login.LoginViewModel
 import com.app.eho.utils.common.Event
 import com.app.eho.utils.common.Status
 

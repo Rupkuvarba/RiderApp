@@ -13,7 +13,6 @@ Data Access objects:
 
 @Dao
 interface DummyDao {
-
     @Query("SELECT * FROM dummy_entity")
     fun getAll(): List<DummyEntity>
 

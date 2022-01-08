@@ -84,6 +84,19 @@
     <string name="dashboard_title">Dashboard</string>
     <string name="welcome_back_log_in_to_continue_with_ui_for_android">Welcom back. Log in to continue with UI for android.</string>
 
+    <!--otp screen-->
+    <string name="otp_title">OTP</string>
+
+    <!--Login-->
+    <string name="request_eho">Request for an\nAmbulance with <b><b><b><font color="#F21119BE">EHO</font></b></b></b></string>
+    <string name="t_and_c_first">By continuing. you agree that you have read and</string>
+    <string name="t_and_c_Second">accept our</string>
+    <string name="t_and_c_third">T&amp;CS</string>
+    <string name="t_and_c_fifth"> and </string>
+    <string name="t_and_c_four">Privacy Policy</string>
+    <string name="otp_Sendtitle">SEND OTP</string>
+    <string name="phone_number_hint">Your Number</string>
+
     <!--Drawer menu-->
     <string name="menu_home">EHO</string>
     <string name="menu_gallery">Gallery</string>
@@ -100,5 +113,12 @@
     <string name="nav_header_desc">Navigation header</string>
 
     <string name="map_confirm_pick_up">Confirm Pick Up</string>
+    <string name="facebook_app_id">949627859266288</string>
+    <string name="fb_login_protocol_scheme">fb[949627859266288]</string>
+
+    <!--otp screen-->
+    <string name="otp_enter_six_digit_code">Enter the six digit code we sent to</string>
+    <string name="otp_phone_number">9426426371</string>
+    <string name="otp_resend_code_in">Resend code in 0:25</string>
 
 </resources>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    tools:context=".ui.modules.auth.otp.OTPActivity">
+
+    <data>
+
+        <variable
+            name="mViewModel"
+            type="com.app.eho.ui.modules.auth.otp.OTPViewModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/toolbar_top_height"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tv_top_bar_title"
+                        style="@style/TextViewTopTileTheme"
+                        android:text=""
+                        android:textColor="@color/white" />
+
+                </androidx.appcompat.widget.Toolbar>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/screen_form_padding"
+                    app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_otp_info"
+                        style="@style/TextViewLinkTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15ssp"
+                        android:gravity="center"
+                        android:text="@string/otp_enter_six_digit_code"
+                        android:textColor="@color/text_input_icon_color"
+                        android:textSize="@dimen/_14ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/tv_phone_nember"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_phone_nember"
+                        style="@style/TextViewLinkTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:inputType="phone"
+                        android:focusable="false"
+                        android:enabled="false"
+                        android:text="@string/otp_phone_number"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintBottom_toTopOf="@+id/otp_view"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_otp_info" />
+
+                    <!--                    <in.aabhasjindal.otptextview.OtpTextView-->
+                    <!--                        android:id="@+id/otp_view"-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:textColor="#ffffff"-->
+                    <!--                        app:bar_enabled="true"-->
+                    <!--                        app:bar_height="2dp"-->
+                    <!--                        app:height="40dp"-->
+                    <!--                        android:background=""-->
+                    <!--                        android:layout_marginTop="@dimen/_20ssp"-->
+                    <!--                        android:layout_marginBottom="@dimen/_20ssp"-->
+                    <!--                        app:layout_constraintBottom_toTopOf="@id/tv_resend_code"-->
+                    <!--                        app:layout_constraintStart_toStartOf="parent"-->
+                    <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+                    <!--                        app:layout_constraintTop_toBottomOf="@id/tv_phone_nember"-->
+                    <!--                        app:length="4"-->
+                    <!--                        app:otp="1234"-->
+                    <!--                        app:otp_text_size="24dp"-->
+                    <!--                        app:width="40dp" />-->
+                    <com.kevinschildhorn.otpview.OTPView
+                        android:id="@+id/otp_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:autofillHints=""
+                        android:importantForAutofill="no"
+                        android:inputType="textCapCharacters|textNoSuggestions"
+                        app:layout_constraintBottom_toTopOf="@id/tv_resend_code"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_phone_nember"
+                        app:otp_backgroundImage="@drawable/background"
+                        app:otp_cursorColor="@color/colorPrimary"
+                        app:otp_filledBackgroundImage="@drawable/background"
+                        app:otp_filledTextSize="24sp"
+                        app:otp_highlightedBackgroundImage="@drawable/background_highlighted"
+                        app:otp_highlightedTextSize="24sp"
+                        app:otp_itemCount="6"
+                        app:otp_itemHeight="46sp"
+                        app:otp_itemWidth="42sp"
+                        app:otp_marginBetween="8dp"
+                        app:otp_showCursor="true"
+                        app:otp_textColor="@color/black"
+                        app:otp_textSize="24sp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_resend_code"
+                        style="@style/TextViewLinkTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10ssp"
+                        android:gravity="center"
+                        android:text="@string/otp_resend_code_in"
+                        android:textColor="@color/hint_color"
+                        android:textSize="@dimen/_14ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/otp_view" />
+
+                    <ProgressBar
+                        android:id="@+id/pb_loading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

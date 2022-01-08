@@ -14,7 +14,7 @@ class LoginViewModel(): BaseViewModel() {
     /*
     You can set value by post and get value from mutable live data
      */
-    val emailField: MutableLiveData<String> = MutableLiveData()
+//    val emailField: MutableLiveData<String> = MutableLiveData()
     val passwordField: MutableLiveData<String> = MutableLiveData()
 
     val loggingIn: MutableLiveData<Boolean> = MutableLiveData()   //progressbar
@@ -33,18 +33,18 @@ class LoginViewModel(): BaseViewModel() {
         }
     //var responseLiveData: MutableLiveData<LoginResponse>? = MutableLiveData<LoginResponse>()
 
-    fun onEmailChange(email: String) = emailField.postValue(email)
+//    fun onEmailChange(email: String) = emailField.postValue(email)
 
     fun onPasswordChange(password: String) = passwordField.postValue(password)
 
     fun onLogin() {
-        val email = emailField.value
+//        val email = emailField.value
         val password = passwordField.value
 
-        val validations = Validator.validateLoginFields(email, password)
+        val validations = Validator.validateLoginFields("", password)
         validationsList.postValue(validations)
 
-        if (validations.isNotEmpty() && email != null && password != null) {
+        if (validations.isNotEmpty() && "" != null && password != null) {
             val successValidation = validations.filter { it.resource.status == Status.SUCCESS }
             if (successValidation.size == validations.size) {
 

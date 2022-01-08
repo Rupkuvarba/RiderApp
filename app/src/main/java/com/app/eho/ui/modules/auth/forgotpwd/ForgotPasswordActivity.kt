@@ -90,7 +90,6 @@ class ForgotPasswordActivity : BaseActivity() {
             activityBinding.pbLoading.visibility = if (it) View.VISIBLE else View.GONE
         })
     }
-
 }
 
 fun Context.forgotPasswordIntent(): Intent {

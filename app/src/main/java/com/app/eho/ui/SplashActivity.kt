@@ -9,10 +9,12 @@ import com.app.eho.utils.log.LogUtils
 import com.fsm.sharedpreference.SPConstants
 import android.os.Handler
 import android.os.Looper
+import android.view.WindowManager
 import com.app.eho.ui.modules.auth.login.loginIntent
 
 class SplashActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState)
         splashScreenNormal()
     }
