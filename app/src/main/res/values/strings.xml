@@ -11,6 +11,11 @@
     <string name="where_to">Where to?</string>
     <string name="pickup_location">Pickup Location</string>
     <string name="location_service_disable">Location service disabled</string>
+    <string name="confirm_from_ambulance">Confirm from ambulance</string>
+    <string name="search">Search</string>
+    <string name="map_pick_up_label">Move map and choose a pick-up spot</string>
+    <string name="map_choose_ambulance_label">Choose a ambulance </string>
+    <string name="map_searching_ambulance_label">Searching Ambulance</string>
 
     <!--fcm notification channel-->
     <string name="default_notification_channel_id" translatable="false">fcm_notifications_id</string>

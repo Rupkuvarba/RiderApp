@@ -41,4 +41,9 @@
 
     <!--button-->
     <color name="btn_bg_color">@color/colorPrimaryDark</color>
+
+    <color name="text_color_normal">@color/black</color>
+    <color name="text_color_blue">@color/app_theme_color</color>
+    <color name="app_theme_selected">#AEB2ED</color>
+    <color name="transparent_black_less">#20000000</color>
 </resources>

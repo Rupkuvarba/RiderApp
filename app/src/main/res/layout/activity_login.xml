@@ -169,7 +169,7 @@
                         android:contentDescription=""
                         android:padding="9dp"
                         android:src="@mipmap/btn_google"
-                        app:layout_constraintBottom_toTopOf="@+id/textView2"
+                        app:layout_constraintBottom_toTopOf="@+id/tv_away"
                         app:layout_constraintEnd_toStartOf="@+id/guidelinevertical"
                         app:layout_constraintTop_toBottomOf="@id/btn_submit" />
 
@@ -200,7 +200,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/btn_submit" />
                     <TextView
-                        android:id="@+id/textView2"
+                        android:id="@+id/tv_away"
 
                         style="@style/TextViewLabelTheme"
                         android:text="@string/t_and_c_first"
@@ -221,7 +221,7 @@
                         app:layout_constraintStart_toStartOf="parent">
 
                         <TextView
-                            android:id="@+id/textView3"
+                            android:id="@+id/tv_name"
                             style="@style/TextViewLabelTheme"
                             android:layout_marginLeft="@dimen/_2ssp"
                             android:layout_marginTop="0dp"
