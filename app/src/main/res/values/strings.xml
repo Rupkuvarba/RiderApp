@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">eho</string>
+    <string name="app_name">EHO</string>
     <string name="title_activity_maps">MapsActivity</string>
 
     <!--Map-->
@@ -104,9 +104,9 @@
 
     <!--Drawer menu-->
     <string name="menu_home">EHO</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="menu_tools">Tools</string>
+    <string name="menu_gallery">Ambulance</string>
+    <string name="menu_slideshow">Hospital</string>
+    <string name="menu_tools">Pharmacy</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
     <string name="communicate">Communicate</string>

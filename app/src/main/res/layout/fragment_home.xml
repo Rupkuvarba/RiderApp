@@ -181,7 +181,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10ssp"
-                android:layout_marginStart="@dimen/_10ssp"
                 android:background="@color/white"
                 android:paddingTop="@dimen/_15ssp"
                 android:visibility="gone"
